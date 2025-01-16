@@ -8,21 +8,21 @@ class PageController extends Controller
 {
     public function promotive()
     {
-        return view('promotive');  
+        return view('feature.promotive');  
     }
 
     public function preventive()
     {
-        return view('preventive'); 
+        return view('feature.preventive'); 
     }
 
     public function diagnostic()
     {
-        return view('diagnostic'); 
+        return view('feature.diagnostic'); 
     }
 
     public function monitoring()
     {
-        return view('monitoring');  
+        return view('feature.monitoring');  
     }
 }
