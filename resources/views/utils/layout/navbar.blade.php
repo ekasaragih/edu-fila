@@ -1,5 +1,5 @@
 <!-- Navbar Section -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top mb-5">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Edu Fila</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -9,16 +9,28 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#promotive"><i class="fas fa-users"></i> Promotive</a>
+                    <a class="nav-link {{ Route::currentRouteName() == 'promotive' ? 'active' : '' }}"
+                        href="{{ route('promotive') }}">
+                        <i class="fas fa-users"></i> Promotive
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#preventive"><i class="fas fa-shield-alt"></i> Preventive</a>
+                    <a class="nav-link {{ Route::currentRouteName() == 'preventive' ? 'active' : '' }}"
+                        href="{{ route('preventive') }}">
+                        <i class="fas fa-shield-alt"></i> Preventive
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#diagnostic"><i class="fas fa-stethoscope"></i> Diagnostic</a>
+                    <a class="nav-link {{ Route::currentRouteName() == 'diagnostic' ? 'active' : '' }}"
+                        href="{{ route('diagnostic') }}">
+                        <i class="fas fa-stethoscope"></i> Diagnostic
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#monitoring"><i class="fas fa-chart-line"></i> Monitoring</a>
+                    <a class="nav-link {{ Route::currentRouteName() == 'monitoring' ? 'active' : '' }}"
+                        href="{{ route('monitoring') }}">
+                        <i class="fas fa-chart-line"></i> Monitoring
+                    </a>
                 </li>
             </ul>
         </div>
