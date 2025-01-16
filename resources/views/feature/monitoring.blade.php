@@ -1,15 +1,18 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edu Fila</title>
-    <!-- Add Bootstrap CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="{{ asset('css/custom.css') }}" rel="stylesheet"> <!-- Link to custom CSS -->
-</head>
-
+@extends('layout')
 @include('utils.layout.navbar')
 
+@section('content')
+
 <div style="margin-top: 5em;">
-    Ini page monitoring.
+
+    <div class="container py-2">
+        <h2 class="display-5 fw-bold text-dark">Monitoring</h2>
+    </div>
+
+    <main>
+
+    </main>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+@endsection
