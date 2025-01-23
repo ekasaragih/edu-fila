@@ -19,7 +19,8 @@
 
             <div class="col-md-3 mb-4">
                 <div class="card shadow-sm border-light rounded">
-                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="Promotive">
+                    <img src="https://i.pinimg.com/736x/dd/12/5a/dd125aae5bd7df5d2db2b5e959d38f89.jpg"
+                        class="card-img-top" style="height: 300px !important; object-fit: cover;" alt="Promotive">
                     <div class="card-body">
                         <h5 class="card-title">Promotif</h5>
                         <p class="card-text">Menyediakan program edukasi yang memberdayakan individu dengan
@@ -30,7 +31,8 @@
 
             <div class="col-md-3 mb-4">
                 <div class="card shadow-sm border-light rounded">
-                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="Preventive">
+                    <img src="https://i.pinimg.com/474x/2a/4f/9b/2a4f9b99d25169dd1e8c48605aa0a3da.jpg"
+                        class="card-img-top" style="height: 300px !important; object-fit: cover;" alt="Preventive">
                     <div class="card-body">
                         <h5 class="card-title">Preventif</h5>
                         <p class="card-text">Mencegah kesenjangan pendidikan dengan mengatasi masalah sebelum
@@ -41,7 +43,8 @@
 
             <div class="col-md-3 mb-4">
                 <div class="card shadow-sm border-light rounded">
-                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="Diagnostic">
+                    <img src="https://i.pinimg.com/474x/0e/4a/11/0e4a111c994200dc7b68d4c210fd659b.jpg"
+                        class="card-img-top" style="height: 300px !important; object-fit: cover;" alt="Diagnostic">
                     <div class="card-body">
                         <h5 class="card-title">Diagnostik</h5>
                         <p class="card-text">Mendiagnosis dan menganalisis kebutuhan pendidikan untuk menciptakan
@@ -52,10 +55,11 @@
 
             <div class="col-md-3 mb-4">
                 <div class="card shadow-sm border-light rounded">
-                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="Monitoring">
+                    <img src="https://i.pinimg.com/474x/dc/2c/d2/dc2cd2804101f957dba0aeed3d277c5c.jpg"
+                        class="card-img-top" style="height: 300px !important; object-fit: cover;" alt="Monitoring">
                     <div class="card-body">
                         <h5 class="card-title">Monitoring</h5>
-                        <p class="card-text">Memantau dan mengevaluasi kemajuan pendidikan untuk memastikan
+                        <p class="card-text">Memantau kemajuan pendidikan untuk memastikan
                             perbaikan yang berkelanjutan.</p>
                     </div>
                 </div>
