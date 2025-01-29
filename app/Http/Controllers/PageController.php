@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Diagnostic;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -23,6 +24,7 @@ class PageController extends Controller
 
     public function monitoring()
     {
-        return view('feature.monitoring');  
+        $diagnostics = Diagnostic::all();
+        return view('feature.monitoring', compact('diagnostics'));  
     }
 }
