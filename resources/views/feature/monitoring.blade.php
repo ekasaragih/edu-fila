@@ -41,7 +41,7 @@
     <main>
         <div class="card overflow-hidden">
             <div class="card-body px-3 pt-0 pb-3">
-                <h3 class="mt-2 text-center" style="color: #1d275f;">Monitoring</h3>
+                <h3 class="mt-2 text-left" style="color: #1d275f;">Hanya admin yang bisa mengakses laman ini.</h3>
 
                 <div class="table-responsive p-0">
                     <table id="projectTable" class="display table table-bordered text-center">

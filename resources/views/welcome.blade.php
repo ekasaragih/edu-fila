@@ -4,8 +4,24 @@
 
 <section class="hero bg-dark text-white text-center py-5 mt-5">
     <div class="container">
+        @if(Auth::guard('admin')->check())
+        <!-- Check if admin is logged in -->
+        <h1 class="display-3 mb-4">Halo Admin, <br /> Selamat Datang di Edu Fila</h1>
+        <p class="lead mb-4">Silakan cek halaman monitoring untuk informasi lebih lanjut.</p>
+        <div class="d-flex justify-content-center align-items-center mt-4 gap-3">
+            <a href="{{ route('monitoring') }}" class="btn btn-primary px-2 py-2" style="font-size: 14px;">
+                Cek Monitoring
+            </a>
+            <form action="{{ route('admin.logout') }}" method="POST">
+                @csrf
+                <button type="submit" class="btn btn-outline-danger px-2 py-2" style="font-size: 14px;">
+                    Keluar dari Akun Admin
+                </button>
+            </form>
+        </div>
+        @else
         <h1 class="display-3 mb-4">Selamat Datang di <br /> Edu Fila</h1>
-        <p class="lead mb-4">Edukasi tentang pembelajaran untuk masa depan yang lebih baik.</p>
+        <p class="lead mb-4">Edukasi tentang penyakit kaki gajah.</p>
         <div class="d-flex justify-content-center align-items-center mt-4 gap-3">
             <a href="{{ route('promotive') }}" class="btn btn-primary px-2 py-2" style="font-size: 14px;">
                 Pelajari Lebih Lanjut
@@ -14,6 +30,7 @@
                 Masuk sebagai Admin
             </a>
         </div>
+        @endif
     </div>
 </section>
 
