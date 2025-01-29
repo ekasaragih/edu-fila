@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\AdminAuthController;
+use App\Http\Controllers\DiagnosticController;
 
 
 // Admin login routes
@@ -21,7 +22,9 @@ Route::get('/', function () {
 
 Route::get('/promotive', [PageController::class, 'promotive'])->name('promotive');
 Route::get('/preventive', [PageController::class, 'preventive'])->name('preventive');
+
 Route::get('/diagnostic', [PageController::class, 'diagnostic'])->name('diagnostic');
+Route::post('/diagnostic', [DiagnosticController::class, 'store'])->name('diagnostic.store');
 
 
 
