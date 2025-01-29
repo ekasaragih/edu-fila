@@ -39,36 +39,57 @@
     </div>
 
     <main>
-        <div class="card overflow-hidden">
-            <div class="card-body px-3 pt-0 pb-3">
-                <h3 class="mt-2 text-left" style="color: #1d275f;">Hanya admin yang bisa mengakses laman ini.</h3>
 
-                <div class="table-responsive p-0">
-                    <table id="projectTable" class="display table table-bordered text-center">
-                        <thead style="background-color: #5f94ff; color: white;">
-                            <tr>
-                                <th>Nama</th>
-                                <th>Usia</th>
-                                <th>Alamat</th>
-                                <th>Jenis Kelamin</th>
-                                <th>Hasil Diagnosa</th>
-                            </tr>
-                        </thead>
-                        <tbody id="projectTableBody">
-                            @foreach($diagnostics as $diagnostic)
-                            <tr>
-                                <td>{{ $diagnostic->nama }}</td>
-                                <td>{{ $diagnostic->umur }}</td>
-                                <td>{{ $diagnostic->alamat }}</td>
-                                <td>{{ $diagnostic->jenis_kelamin == 0 ? 'Laki-laki' : 'Perempuan' }}</td>
-                                <td>{{ $diagnostic->hasil_diagnosa == 0 ? 'Negatif' : 'Positif' }}</td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+        <div class="container mb-4 text-left">
+            @if(Auth::guard('admin')->check())
+
+            <div class="card overflow-hidden mb-4">
+                <div class="card-body px-3 pt-0 pb-3">
+                    <h3 class="mt-2 text-left">Halo, Admin.</h3>
+
+                    <div class="table-responsive p-0">
+                        <table id="projectTable" class="display table table-bordered text-center">
+                            <thead style="background-color: #5f94ff; color: white;">
+                                <tr>
+                                    <th>Nama</th>
+                                    <th>Usia</th>
+                                    <th>Alamat</th>
+                                    <th>Jenis Kelamin</th>
+                                    <th>Hasil Diagnosa</th>
+                                </tr>
+                            </thead>
+                            <tbody id="projectTableBody">
+                                @foreach($diagnostics as $diagnostic)
+                                <tr>
+                                    <td>{{ $diagnostic->nama }}</td>
+                                    <td>{{ $diagnostic->umur }}</td>
+                                    <td>{{ $diagnostic->alamat }}</td>
+                                    <td>{{ $diagnostic->jenis_kelamin == 0 ? 'Laki-laki' : 'Perempuan' }}</td>
+                                    <td>{{ $diagnostic->hasil_diagnosa == 0 ? 'Negatif' : 'Positif' }}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
+
+            <form action="{{ route('admin.logout') }}" method="POST">
+                @csrf
+                <button type="submit" class="btn btn-outline-danger px-4 py-2" style="font-size: 14px;">
+                    Keluar dari Akun Admin
+                </button>
+            </form>
+            @else
+            <h3 class="mt-2 text-left">Hanya admin yang bisa mengakses laman ini.</h3>
+
+            <a href="{{ route('admin.login') }}" class="btn btn-outline-warning px-4 py-2" style="font-size: 14px;">
+                Masuk sebagai Admin
+            </a>
+            @endif
         </div>
+
+
     </main>
 </div>
 

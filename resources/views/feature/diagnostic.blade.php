@@ -4,6 +4,7 @@
 @section('content')
 
 <div style="margin-top: 5rem;">
+
     <div class="container py-2 d-flex justify-content-center">
         <div class="card" style="width: 30rem;">
             <div class="card-body">
@@ -69,6 +70,23 @@
                 </form>
             </div>
         </div>
+    </div>
+
+    <!-- Button Section: Display based on admin status -->
+    <div class="container mb-4 text-left">
+        @if(Auth::guard('admin')->check())
+        <!-- Check if admin is logged in -->
+        <form action="{{ route('admin.logout') }}" method="POST">
+            @csrf
+            <button type="submit" class="btn btn-outline-danger px-4 py-2" style="font-size: 14px;">
+                Keluar dari Akun Admin
+            </button>
+        </form>
+        @else
+        <a href="{{ route('admin.login') }}" class="btn btn-outline-warning px-4 py-2" style="font-size: 14px;">
+            Masuk sebagai Admin
+        </a>
+        @endif
     </div>
 </div>
 

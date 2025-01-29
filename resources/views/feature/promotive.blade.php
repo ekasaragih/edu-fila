@@ -10,6 +10,7 @@
     </div>
 
     <main>
+
         <!-- Carousel Structure with YouTube Iframes -->
         <div class="container text-white rounded-4 p-4" style="background-color: #001f4d;">
             <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -78,7 +79,22 @@
             </div>
         </div>
     </main>
-
+    <!-- Button Section: Display based on admin status -->
+    <div class="container mb-4 mt-4 text-left">
+        @if(Auth::guard('admin')->check())
+        <!-- Check if admin is logged in -->
+        <form action="{{ route('admin.logout') }}" method="POST">
+            @csrf
+            <button type="submit" class="btn btn-outline-danger px-4 py-2" style="font-size: 14px;">
+                Keluar dari Akun Admin
+            </button>
+        </form>
+        @else
+        <a href="{{ route('admin.login') }}" class="btn btn-outline-warning px-4 py-2" style="font-size: 14px;">
+            Masuk sebagai Admin
+        </a>
+        @endif
+    </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
