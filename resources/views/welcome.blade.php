@@ -4,9 +4,16 @@
 
 <section class="hero bg-dark text-white text-center py-5 mt-5">
     <div class="container">
-        <h1 class="display-3 mb-4">Selamat Datang di Edu Fila</h1>
+        <h1 class="display-3 mb-4">Selamat Datang di <br /> Edu Fila</h1>
         <p class="lead mb-4">Edukasi tentang pembelajaran untuk masa depan yang lebih baik.</p>
-        <a href="{{ route('promotive') }}" class="btn btn-primary btn-lg">Pelajari Lebih Lanjut</a>
+        <div class="d-flex justify-content-center align-items-center mt-4 gap-3">
+            <a href="{{ route('promotive') }}" class="btn btn-primary px-2 py-2" style="font-size: 14px;">
+                Pelajari Lebih Lanjut
+            </a>
+            <a href="{{ route('admin.login') }}" class="btn btn-outline-warning px-2 py-2" style="font-size: 14px;">
+                Masuk sebagai Admin
+            </a>
+        </div>
     </div>
 </section>
 
@@ -23,8 +30,8 @@
                         class="card-img-top" style="height: 300px !important; object-fit: cover;" alt="Promotive">
                     <div class="card-body">
                         <h5 class="card-title">Promotif</h5>
-                        <p class="card-text">Menyediakan program edukasi yang memberdayakan individu dengan
-                            pengetahuan dan keterampilan.</p>
+                        <p class="card-text">Tingkatkan kesadaran Anda dengan video edukasi lengkap tentang kaki gajah,
+                            termasuk penyebab, gejala, hingga cara pencegahannya.</p>
                     </div>
                 </div>
             </div>
@@ -35,8 +42,8 @@
                         class="card-img-top" style="height: 300px !important; object-fit: cover;" alt="Preventive">
                     <div class="card-body">
                         <h5 class="card-title">Preventif</h5>
-                        <p class="card-text">Mencegah kesenjangan pendidikan dengan mengatasi masalah sebelum
-                            memengaruhi performa.</p>
+                        <p class="card-text">Akses booklet dan leaflet informatif tentang kaki gajah yang dirancang
+                            untuk membantu pencegahan sejak dini.</p>
                     </div>
                 </div>
             </div>
@@ -47,8 +54,9 @@
                         class="card-img-top" style="height: 300px !important; object-fit: cover;" alt="Diagnostic">
                     <div class="card-body">
                         <h5 class="card-title">Diagnostik</h5>
-                        <p class="card-text">Mendiagnosis dan menganalisis kebutuhan pendidikan untuk menciptakan
-                            solusi yang sesuai.</p>
+                        <p class="card-text">Gunakan form digital kami untuk membantu mendiagnosa dan melihat hasil
+                            serta potensi kaki gajah
+                            secara mudah dan cepat.</p>
                     </div>
                 </div>
             </div>
@@ -59,11 +67,13 @@
                         class="card-img-top" style="height: 300px !important; object-fit: cover;" alt="Monitoring">
                     <div class="card-body">
                         <h5 class="card-title">Monitoring</h5>
-                        <p class="card-text">Memantau kemajuan pendidikan untuk memastikan
-                            perbaikan yang berkelanjutan.</p>
+                        <p class="card-text">Sistem pemantauan khusus untuk admin guna memonitor perkembangan pasien
+                            dengan gejala atau riwayat kaki gajah.</p>
+
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
@@ -72,7 +82,7 @@
     <div class="container">
         <h2 class="display-4 mb-4">Mulai Perjalanan Pendidikan Anda Hari Ini!</h2>
         <p class="lead mb-4">Bergabunglah bersama kami untuk membuat perubahan dalam pendidikan.</p>
-        <a href="#" class="btn btn-light btn-lg">Mulai Sekarang</a>
+        <a href="{{ route('promotive') }}" class="btn btn-light btn-lg">Mulai Sekarang</a>
     </div>
 </section>
 
