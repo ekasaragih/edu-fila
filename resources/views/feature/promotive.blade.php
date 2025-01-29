@@ -3,10 +3,10 @@
 
 @section('content')
 
-<div style="margin-top: 5em;">
+<div style="margin-top: 5em; margin-left: 15px; margin-right: 15px;">
 
     <div class="container py-2">
-        <h2 class="display-5 fw-bold text-dark">Promotive</h2>
+        <h2 class="display-5 fw-bold text-dark">Promotif</h2>
     </div>
 
     <main>
@@ -20,11 +20,22 @@
                             <iframe src="https://www.youtube.com/embed/zrBWDtVep7o" frameborder="0"
                                 allowfullscreen></iframe>
                         </div>
+                        <div class="mt-3 text-center">
+                            <p>Filariasis, atau kaki gajah, disebabkan oleh cacing filaria dan ditularkan melalui
+                                nyamuk, menyebabkan pembengkakan
+                                ekstrem.
+                            </p>
+                        </div>
                     </div>
                     <div class="carousel-item">
                         <div class="ratio ratio-16x9" style="max-width: 1000px; margin: auto;">
                             <iframe src="https://www.youtube.com/embed/LldZEXBSdQI" frameborder="0"
                                 allowfullscreen></iframe>
+                        </div>
+                        <div class="mt-3 text-center">
+                            <p>Penyakit kaki gajah menyerang pembuluh getah bening, biasanya di daerah pangkal paha,
+                                dada, lengan, organ kelamin.
+                            </p>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -32,24 +43,37 @@
                             <iframe src="https://www.youtube.com/embed/ZH96goFnKEY" frameborder="0"
                                 allowfullscreen></iframe>
                         </div>
+                        <div class="mt-3 text-center">
+                            <p>Tips mencegah kaki gajah meliputi menggunakan kelambu saat tidur, mengoleskan obat anti
+                                nyamuk, dan memakai obat
+                                pengusir nyamuk untuk menghindari gigitan nyamuk penyebab penyakit ini.
+                            </p>
+                        </div>
                     </div>
                     <div class="carousel-item">
                         <div class="ratio ratio-16x9" style="max-width: 1000px; margin: auto;">
                             <iframe src="https://www.youtube.com/embed/ca7_j5PUZW4" frameborder="0"
                                 allowfullscreen></iframe>
                         </div>
+                        <div class="mt-3 text-center">
+                            <p>Penyebab penyakit kaki gajah adalah pembuluh getah bening yang diserang oleh nyamuk akan
+                                menyumbat peredaran darah dan
+                                mengakibatkan pembengkakan.
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <!-- Arrow buttons -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
+            </div>
+
+            <!-- Arrow buttons beside descriptions -->
+            <div class="d-flex justify-content-center align-items-center mt-4 gap-3">
+                <button class="btn btn-outline-light px-2 py-2" type="button" data-bs-target="#videoCarousel"
+                    data-bs-slide="prev" style="font-size: 12px;">
+                    <span class="me-2">&lt;</span> Lihat Sebelumnya
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
+                <button class="btn btn-outline-light px-2 py-2" type="button" data-bs-target="#videoCarousel"
+                    data-bs-slide="next" style="font-size: 12px;">
+                    Lihat Berikutnya <span class="ms-2">&gt;</span>
                 </button>
             </div>
         </div>

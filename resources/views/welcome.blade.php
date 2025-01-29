@@ -4,7 +4,7 @@
 
 <section class="hero bg-dark text-white text-center py-5 mt-5">
     <div class="container">
-        <h1 class="display-3 mb-4">Selamat Datang di Edu Fila</h1>
+        <h1 class="display-3 mb-4">Selamat Datang di <br /> Edu Fila</h1>
         <p class="lead mb-4">Edukasi tentang pembelajaran untuk masa depan yang lebih baik.</p>
         <a href="{{ route('promotive') }}" class="btn btn-primary btn-lg">Pelajari Lebih Lanjut</a>
     </div>
