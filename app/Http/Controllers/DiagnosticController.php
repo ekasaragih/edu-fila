@@ -17,6 +17,7 @@ class DiagnosticController extends Controller
             'gejala' => 'array',
         ]);
 
+        // Simpan data ke database
         $diagnostic = new Diagnostic();
         $diagnostic->nama = $request->nama;
         $diagnostic->umur = $request->umur;
@@ -25,7 +26,16 @@ class DiagnosticController extends Controller
         $diagnostic->hasil_diagnosa = $this->diagnosisResult($request->gejala);
         $diagnostic->save();
 
-        return redirect()->route('diagnostic')->with('success', 'Data berhasil disimpan');
+        // Kirim respons sebagai JSON
+        return response()->json([
+            'success' => true,
+            'nama' => $request->nama,
+            'umur' => $request->umur,
+            'alamat' => $request->alamat,
+            'jenis_kelamin' => $request->jenis_kelamin == 0 ? 'Laki-laki' : 'Perempuan',
+            'gejala' => $request->gejala,
+            'hasil_diagnosa' => $this->diagnosisResult($request->gejala),
+        ]);
     }
 
     private function diagnosisResult($gejala)

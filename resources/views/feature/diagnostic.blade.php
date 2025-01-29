@@ -8,7 +8,7 @@
         <div class="card" style="width: 30rem;">
             <div class="card-body">
                 <h2 class="fw-bold text-dark text-center mb-4">Diagnostik</h2>
-                <form method="POST" action="{{ route('diagnostic.store') }}">
+                <form id="diagnosticForm">
                     @csrf
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama</label>
@@ -65,13 +65,96 @@
                             value="LELAH DAN LEMAS TANPA AKTIVITAS" id="lelah">
                         <label class="form-check-label" for="exampleCheck6">LELAH DAN LEMAS TANPA AKTIVITAS</label>
                     </div>
-                    <button type="submit" class="btn btn-primary w-100">Cek Hasil</button>
+                    <button type="button" id="cekHasilButton" class="btn btn-primary w-100">Cek Hasil</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Modal for Displaying Result -->
+<div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="resultModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="resultModalLabel">Hasil Diagnosa</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Hasil Diagnosa akan tampil di sini -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="ulangCekButton">Ulangi Cek</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    document.getElementById('cekHasilButton').addEventListener('click', function() {
+        const cekHasilButton = document.getElementById('cekHasilButton');
+        cekHasilButton.disabled = true;
+        cekHasilButton.innerText = "Sedang Proses...";
+        
+        const formData = new FormData(document.getElementById('diagnosticForm'));
+        
+        $.ajax({
+            url: '{{ route('diagnostic.store') }}',
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+
+                const nama = response.nama;
+                const umur = response.umur;
+                const alamat = response.alamat;
+                const jenisKelamin = response.jenis_kelamin;
+                const gejala = response.gejala;
+
+                const hasilDiagnosa = gejala.length > 0 ? 'Positif' : 'Negatif';
+             
+                const modalBody = `
+                    <p><strong>Nama:</strong> ${nama}</p>
+                    <p><strong>Umur:</strong> ${umur}</p>
+                    <p><strong>Jenis Kelamin:</strong> ${jenisKelamin}</p>
+                    <p><strong>Alamat:</strong> ${alamat}</p>
+                    <p><strong>Hasil Diagnosa:</strong> ${hasilDiagnosa}</p>
+                    <p><strong>Gejala yang Dipilih:</strong></p>
+                    <ul>
+                        ${gejala.map(g => `<li>${g}</li>`).join('')}
+                    </ul>
+                `;
+                
+                document.getElementById('modalBody').innerHTML = modalBody;
+
+                var myModal = new bootstrap.Modal(document.getElementById('resultModal'), {
+                    keyboard: false
+                });
+                myModal.show();
+
+                cekHasilButton.disabled = true;
+                cekHasilButton.innerText = "Data Sudah Tersubmit";
+            },
+            error: function(xhr, status, error) {
+                console.error('Terjadi kesalahan: ', error);
+
+                cekHasilButton.disabled = false;
+                cekHasilButton.innerText = "Cek Hasil";
+            }
+        });
+    });
+
+    document.getElementById('ulangCekButton').addEventListener('click', function() {
+        location.reload();
+    });
+
+</script>
 
 @endsection
