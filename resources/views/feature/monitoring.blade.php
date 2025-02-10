@@ -96,7 +96,7 @@
 <script>
     $(document).ready(function() {
             var dataTable = $('#projectTable').DataTable({
-                paging: true,
+                paging: false,
                 searching: true,
                 language: {
                     paginate: {
