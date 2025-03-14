@@ -18,10 +18,11 @@
                     <!-- Carousel items -->
                     <div class="carousel-item active">
                         <div class="ratio ratio-16x9" style="max-width: 1000px; margin: auto;">
-                            <video controls>
-                                <source src="{{ asset('asset/materi.mp4') }}" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/gPAi7bBytVM"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
                         </div>
                         <div class="mt-3 text-center">
                             <p>Filariasis, atau kaki gajah, disebabkan oleh cacing filaria dan ditularkan melalui
