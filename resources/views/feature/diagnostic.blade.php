@@ -129,7 +129,6 @@
             processData: false,
             contentType: false,
             success: function(response) {
-
                 const nama = response.nama;
                 const umur = response.umur;
                 const alamat = response.alamat;
@@ -137,8 +136,8 @@
                 const gejala = response.gejala;
 
                 const hasilDiagnosa = gejala.length > 0 ? 'Positif' : 'Negatif';
-             
-                const modalBody = `
+
+                let modalBody = `
                     <p><strong>Nama:</strong> ${nama}</p>
                     <p><strong>Umur:</strong> ${umur}</p>
                     <p><strong>Jenis Kelamin:</strong> ${jenisKelamin}</p>
@@ -149,7 +148,12 @@
                         ${gejala.map(g => `<li>${g}</li>`).join('')}
                     </ul>
                 `;
-                
+
+                // Tambahkan peringatan jika hasilnya positif
+                if (hasilDiagnosa === 'Positif') {
+                    modalBody += `<p class="text-danger fw-bold mt-3">SILAHKAN KUNJUNGI PELAYANAN KESEHATAN TERDEKAT.</p>`;
+                }
+
                 document.getElementById('modalBody').innerHTML = modalBody;
 
                 var myModal = new bootstrap.Modal(document.getElementById('resultModal'), {
