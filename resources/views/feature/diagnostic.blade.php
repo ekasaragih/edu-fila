@@ -138,20 +138,34 @@
                 const hasilDiagnosa = gejala.length > 0 ? 'Positif' : 'Negatif';
 
                 let modalBody = `
-                    <p><strong>Nama:</strong> ${nama}</p>
-                    <p><strong>Umur:</strong> ${umur}</p>
-                    <p><strong>Jenis Kelamin:</strong> ${jenisKelamin}</p>
-                    <p><strong>Alamat:</strong> ${alamat}</p>
-                    <p><strong>Hasil Diagnosa:</strong> ${hasilDiagnosa}</p>
-                    <p><strong>Gejala yang Dipilih:</strong></p>
-                    <ul>
-                        ${gejala.map(g => `<li>${g}</li>`).join('')}
-                    </ul>
+                    <div class="p-3 mb-3 bg-light rounded">
+                        <h5 class="fw-bold text-primary"><i class="bi bi-person-circle"></i> Informasi Pasien</h5>
+                        <p><strong>Nama:</strong> ${nama}</p>
+                        <p><strong>Umur:</strong> ${umur} tahun</p>
+                        <p><strong>Jenis Kelamin:</strong> ${jenisKelamin}</p>
+                        <p><strong>Alamat:</strong> ${alamat}</p>
+                    </div>
+
+                    <div class="p-3 mb-3 ${hasilDiagnosa === 'Positif' ? 'bg-danger text-white' : 'bg-success text-white'} rounded">
+                        <h5 class="fw-bold"><i class="bi ${hasilDiagnosa === 'Positif' ? 'bi-exclamation-triangle-fill' : 'bi-check-circle-fill'}"></i> Hasil Diagnosa</h5>
+                        <p class="fs-5 fw-bold">${hasilDiagnosa}</p>
+                    </div>
+
+                    <div class="p-3 mb-3 bg-light rounded">
+                        <h5 class="fw-bold text-secondary"><i class="bi bi-clipboard-check"></i> Gejala yang Dipilih</h5>
+                        <ul class="mb-0">
+                            ${gejala.length > 0 ? gejala.map(g => `<li>${g}</li>`).join('') : '<li class="text-muted">Tidak ada gejala</li>'}
+                        </ul>
+                    </div>
                 `;
 
                 // Tambahkan peringatan jika hasilnya positif
                 if (hasilDiagnosa === 'Positif') {
-                    modalBody += `<p class="text-danger fw-bold mt-3">SILAHKAN KUNJUNGI PELAYANAN KESEHATAN TERDEKAT.</p>`;
+                    modalBody += `
+                        <div class="alert alert-warning text-dark fw-bold d-flex align-items-center mt-3" role="alert">
+                            <i class="bi bi-hospital fs-4 me-2"></i> SILAHKAN KUNJUNGI PELAYANAN KESEHATAN TERDEKAT SECEPATNYA.
+                        </div>
+                    `;
                 }
 
                 document.getElementById('modalBody').innerHTML = modalBody;
